@@ -31,7 +31,7 @@ export default function About() {
             {/* Right Curtain */}
             {isClient && (
                 <div
-                    style={{ display: 'grid', gridTemplateColumns: 'repeat(20, 1fr)', opacity: .4, border: 'solid #00FFFF 2px', gridTemplateRows: 'repeat(20, 1fr)', position: 'absolute', width: '50%', marginLeft: '50%', height: '100%', zIndex: 1 }}
+                    style={{ display: 'grid', gridTemplateColumns: 'repeat(20, 1fr)', border: 'solid #00FFFF 2px', gridTemplateRows: 'repeat(20, 1fr)', position: 'absolute', width: '50%', marginLeft: '50%', height: '100%', zIndex: 1 }}
                     className={`absolute h-full inset-0 ${isVisible ? 'transition-transform duration-[3000ms] ease-in-out' : 'transition-none'} ${isVisible ? 'transform translate-x-full' : 'transform -translate-x-0'}`}
                 >
                     {Array.from({ length: 400 }).map((_, i) => (
@@ -45,7 +45,16 @@ export default function About() {
             {/* Left Curtain */}
             {isClient && (
                 <div
-                    style={{ display: 'grid', gridTemplateColumns: 'repeat(20, 1fr)', opacity: .4, border: 'solid #00FFFF 2px', gridTemplateRows: 'repeat(20, 1fr)', position: 'absolute', width: '50%', height: '100%', zIndex: 1 }}
+                    style={{ 
+                        display: 'grid', 
+                        gridTemplateColumns: 'repeat(20, 1fr)', 
+                        border: 'solid #00FFFF 2px',
+                        gridTemplateRows: 'repeat(20, 1fr)', 
+                        position: 'absolute', 
+                        width: '50%', 
+                        height: '100%', 
+                        zIndex: 1 
+                    }}
                     className={`absolute h-full inset-0 ${isVisible ? 'transition-transform duration-[3000ms] ease-in-out' : 'transition-none'} ${isVisible ? 'transform -translate-x-full' : 'transform translate-x-0'}`}
                 >
                     {Array.from({ length: 400 }).map((_, i) => (
