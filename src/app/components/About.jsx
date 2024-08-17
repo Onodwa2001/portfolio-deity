@@ -27,7 +27,7 @@ export default function About() {
     }, []);
 
     return (
-        <section id="about" className="relative py-20 bg-darkGray text-white overflow-hidden h-[100vh]">
+        <section id="about" className="relative py-20 bg-darkGray text-white overflow-hidden h-min-[100vh]">
             {/* Right Curtain */}
             {isClient && (
                 <div
@@ -67,8 +67,9 @@ export default function About() {
 
             {/* Actual content */}
             <div className={`relative ${isVisible ? 'opacity-100 transition-opacity duration-1000 ease-in-out' : 'opacity-0'}`}>
-                <h2 className="text-6xl font-extrabold text-center mb-12 text-neon">About Me</h2>
-                <p className="ml-[20%] mr-[20%] text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia qui necessitatibus in accusantium quas aut voluptatem voluptas facere totam repudiandae enim, dolor aliquid rem eos cum sed ex ipsa.</p>
+                <h2 className="text-6xl font-extrabold text-center mb-12 text-neon">About Lord Onodwa Siyotula</h2>
+                <p className="ml-[20%] mr-[20%] text-center"></p>
+                <CodeStyledObject />
                 <div className="flex flex-wrap justify-center gap-8 mt-[50px]">
                     <div className="w-full max-w-sm p-8 bg-gradient-to-r from-blue-800 to-purple-900 border border-transparent rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-2xl">
                         <h3 className="text-4xl font-semibold mb-4 text-neon">Experience</h3>
@@ -101,3 +102,22 @@ export default function About() {
         </section>
     );
 }
+
+const CodeStyledObject = () => {
+  return (
+    <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-white font-mono text-sm ml-[30%] mr-[30%]">
+      <pre>
+        <span className="text-green-400">const</span> deity: {'{'}
+
+        <br />
+        <span className="ml-5 text-cyan-400">name</span>: <span className="text-yellow-200">"Onodwa Siyotula"</span>,
+        <br />
+        <span className="ml-5 text-cyan-400">education</span>: <span className="text-yellow-200">"Diploma in ICT: Applications Development"</span>,
+        <br />
+        <span className="ml-5 text-cyan-400">availableForHire</span>: <span className="text-yellow-200">true</span>
+        <br />
+        {'}'}
+      </pre>
+    </div>
+  );
+};
