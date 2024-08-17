@@ -27,7 +27,7 @@ export default function About() {
     }, []);
 
     return (
-        <section id="about" className="relative py-20 bg-darkGray text-white overflow-hidden">
+        <section id="about" className="relative py-20 bg-darkGray text-white overflow-hidden h-[100vh]">
             {/* Right Curtain */}
             {isClient && (
                 <div
@@ -67,15 +67,17 @@ export default function About() {
 
             {/* Actual content */}
             <div className={`relative ${isVisible ? 'opacity-100 transition-opacity duration-1000 ease-in-out' : 'opacity-0'}`}>
-                <h2 className="text-6xl font-extrabold text-center mb-12 text-gradient">About Me</h2>
-                <div className="flex flex-wrap justify-center gap-8">
-                    <div className="w-full max-w-xs p-8 bg-gradient-to-r from-blue-800 to-purple-900 border border-transparent rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-2xl">
+                <h2 className="text-6xl font-extrabold text-center mb-12 text-neon">About Me</h2>
+                <p className="ml-[20%] mr-[20%] text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quia qui necessitatibus in accusantium quas aut voluptatem voluptas facere totam repudiandae enim, dolor aliquid rem eos cum sed ex ipsa.</p>
+                <div className="flex flex-wrap justify-center gap-8 mt-[50px]">
+                    <div className="w-full max-w-sm p-8 bg-gradient-to-r from-blue-800 to-purple-900 border border-transparent rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-2xl">
                         <h3 className="text-4xl font-semibold mb-4 text-neon">Experience</h3>
-                        <p className="text-lg">Years of coding experience with a passion for futuristic designs. Always pushing the boundaries of innovation.</p>
+                        <p className="text-lg">A year of coding experience with a passion for building complex applications. Always pushing the boundaries of innovation.</p>
                     </div>
-                    <div className="w-full max-w-xs p-8 bg-gradient-to-r from-blue-800 to-purple-900 border border-transparent rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-2xl">
+                    
+                    <div className="w-full max-w-sm p-8 bg-gradient-to-r from-blue-800 to-purple-900 border border-transparent rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-2xl">
                         <h3 className="text-4xl font-semibold mb-4 text-neon">Skills</h3>
-                        <p className="text-lg">Proficient in JavaScript, React, Next.js, Tailwind CSS. Expertise in creating visually stunning and performant applications.</p>
+                        <p className="text-lg">Proficient in JavaScript, Typescript, React, Next.js, Tailwind CSS, NodeJS, ExpressJS, Java, Spring Boot, MySQL, PostgresQL, and Docker. Creating visually stunning and performant applications with well organized APIs and a managed CI/CD pipeline.</p>
                     </div>
                 </div>
             </div>
