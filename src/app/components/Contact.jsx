@@ -12,13 +12,13 @@ export default function Contact() {
                 
                 {/* Social Media Icons */}
                 <div className="justify-center flex space-x-8 mb-10">
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-neon hover:text-white transition-transform transform hover:scale-125">
+                    <a href="https://www.instagram.com/viggo.exe/" target="_blank" rel="noopener noreferrer" className="text-neon hover:text-white transition-transform transform hover:scale-125">
                         <FaInstagram size={30} />
                     </a>
-                    <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="text-neon hover:text-white transition-transform transform hover:scale-125">
+                    <a href="https://github.com/Onodwa2001/" target="_blank" rel="noopener noreferrer" className="text-neon hover:text-white transition-transform transform hover:scale-125">
                         <FaGithub size={30} />
                     </a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-neon hover:text-white transition-transform transform hover:scale-125">
+                    <a href="https://www.linkedin.com/in/onodwa-siyotula-biic" target="_blank" rel="noopener noreferrer" className="text-neon hover:text-white transition-transform transform hover:scale-125">
                         <FaLinkedin size={30} />
                     </a>
                 </div>
