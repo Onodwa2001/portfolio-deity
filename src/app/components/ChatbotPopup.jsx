@@ -10,27 +10,30 @@ export default function ChatbotPopup() {
         {
             id: 1,
             question: 'Tell me about yourself',
-            answer: 'Dope guy'
+            answer: `I recently graduated with a Diploma in ICT in Applications Development from CPUT in April 2024, where I excelled academically, earning 16 distinctions and being invited to join the Golden Key Association. During my time at university, I gained a solid foundation in Java and Spring Boot.
+                    Professionally, I spent 6 months as a Software Engineer intern at LexisNexis, where I honed my skills in debugging, writing unit tests, and maintaining software, along with implementing user analytics tracking. This experience gave me a real-world understanding of software development and the importance of clean, maintainable code.
+                    Currently, I'm working at BIIC, where I've had the opportunity to collaborate with a team to build an app for the faculty of business at CPUT. In addition to development, I've also taken on leadership roles, conducting interviews, mentoring interns, and guiding them in innovative projects.
+                    In my spare time, I built Phoenix Tutorium, a tutor finder web application that allows users to connect with tutors and chat directly on the platform. This project reflects my passion for creating solutions that make a difference`
         },
         {
             id: 2,
             question: 'What are your strengths?',
-            answer: 'I do hard stuff'
+            answer: 'I enjoy do things that others do not want to do 💪'
         },
         {
             id: 3,
             question: 'What are your weaknesses?',
-            answer: 'I get bored by routine'
+            answer: 'My hearing is a little bad 😅'
         },
         {
             id: 4,
             question: 'What are your skills?',
-            answer: 'Java and stuff'
+            answer: 'I know both frontend 🌍, backend 🛜, databases 🏬 and REST APIs ✈️. I am profficient in JavaScript, TypeScript, and Java. I am familiar with C# and PHP. \nMy tech stack for small projects is React, NodeJS and Express, MongoDB.\nMy choice for bigger projects is NextJS or Angular and Spring Boot or ASP.NET'
         },
         {
             id: 5,
             question: 'I would like to hire you',
-            answer: 'Okay'
+            answer: 'If you scroll to the bottom of the page ⬇️⬇️⬇️, you will find all my social media. You can also leave a message ✉️ on the contact form and I will get in touch with you as soon as possible ✨.'
         }
     ]
 
@@ -46,7 +49,7 @@ export default function ChatbotPopup() {
     }
 
     const renderResponse = () => {
-        
+
     }
 
     useEffect(() => {
