@@ -107,7 +107,7 @@ const CodeStyledObject = () => {
   return (
     <div className="bg-gray-900 p-6 rounded-lg shadow-lg text-white font-mono text-sm ml-[30%] mr-[30%]">
       <pre>
-        <span className="text-green-400">const</span> deity: {'{'}
+        <span className="text-green-400">const</span> deity = {'{'}
 
         <br />
         <span className="ml-5 text-cyan-400">name</span>: <span className="text-yellow-200">"Onodwa Siyotula"</span>,

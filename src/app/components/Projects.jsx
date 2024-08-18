@@ -5,29 +5,34 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 export default function Projects() {
+
     const projects = [
         {
             id: 1,
             title: "Phoenix Tutorium",
             description: "An application that allows tutors and students to connect",
+            link: "https://tutor-fe.vercel.app/",
             image: "https://plus.unsplash.com/premium_photo-1676637000058-96549206fe71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
             id: 2,
             title: "Angular Shopping Cart",
             description: "A simple shopping cart application meant to demonstrate my understandig of Angular",
+            link: "#",
             image: "https://plus.unsplash.com/premium_photo-1676637000058-96549206fe71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
             id: 3,
             title: "Dog Parlor System",
             description: "A full stack enterprise application for a dog parlor business",
+            link: "#",
             image: "https://plus.unsplash.com/premium_photo-1676637000058-96549206fe71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         {
             id: 4,
             title: "Animeetup",
             description: "A social media platform for anime lovers",
+            link: "#",
             image: "https://plus.unsplash.com/premium_photo-1676637000058-96549206fe71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         },
         // Add more projects as needed
@@ -60,6 +65,7 @@ export default function Projects() {
                             visible: { opacity: 1, translateY: 0, transition: { duration: 0.6, delay: index * 0.2 } },
                             hidden: { opacity: 0, translateY: 50 },
                         }}
+                        onClick={() => window.open(project.link, '_blank')}
                     >
                         <div className="absolute inset-0 border-2 border-neon rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                         <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded-t-xl transition-transform duration-300 ease-in-out group-hover:scale-110" />
