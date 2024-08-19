@@ -6,13 +6,19 @@ import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Contact() {
     const [result, setResult] = useState();
     const [loading, setLoading] = useState();
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [message, setMessage] = useState();
 
     const sendEmail = (e) => {
         e.preventDefault();
         setLoading(true);
 
+        const messageObj = { name, email, message };
+
         fetch('/api/emails', {
-            method: 'POST'
+            method: 'POST',
+            body: JSON.stringify(messageObj)
         })
             .then(res => res.json())
             .then(data => {
@@ -23,7 +29,12 @@ export default function Contact() {
                 console.log(error)
                 setResult(error)
             })
-            .finally(() => setLoading(false));
+            .finally(() => {
+                setLoading(false)
+                setTimeout(() => {
+                    setResult('');
+                }, 8000);
+            });
     }
 
     return (
@@ -33,8 +44,8 @@ export default function Contact() {
                     Speak thy will
                 </h2>
 
-                {loading && <div className="my-4">Processing...</div>}
-                {/* {result && <div className="my-4">{result}</div>} */}
+                {/* {loading && <div className="my-4">Processing...</div>} */}
+                {result && <div className="my-4 text-center">{result.message}</div>}
                 
                 {/* Social Media Icons */}
                 <div className="justify-center flex space-x-8 mb-10">
@@ -53,15 +64,21 @@ export default function Contact() {
                     <input
                         type="text"
                         placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
                         className="p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
                     />
                     <input
                         type="email"
                         placeholder="Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         className="p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
                     />
                     <textarea
                         placeholder="Message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
                         className="p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
                         rows="6"
                     />
@@ -69,7 +86,7 @@ export default function Contact() {
                         onClick={sendEmail}
                         className="p-4 bg-neon text-darkGray font-bold rounded-lg transition-transform transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-neon focus:ring-opacity-50"
                     >
-                        Send
+                        {loading ? 'Processing...' : 'Send'}
                     </button>
                 </form>
                 <div className="absolute inset-0 pointer-events-none border border-neon rounded-xl opacity-30 animate-pulse"></div>

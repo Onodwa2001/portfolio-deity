@@ -1,6 +1,8 @@
 import { sendEmail } from "@/utils/mail.utils"
 
-export async function POST() {
+export async function POST(req) {
+    const body = await req.json()
+
     const sender = {
         name: 'My App',
         address: 'onodwasiyotula7@gmail.com'
@@ -15,14 +17,15 @@ export async function POST() {
         const result = await sendEmail({
             sender,
             receipients,
-            subject: 'welcome to our website',
-            message: 'You are welcome'
+            subject: 'New message from your web portfolio',
+            message: body.email + ': ' + body.message
         })
     
         return Response.json({
-            accepted: result.accepted
+            accepted: result.accepted,
+            message: 'The carrier pigeon has delivered the message to your majesty!🧙‍♂️',
         })
     } catch (error) {
-        return Response.json({ message: 'Errorrr: ' + error.message }, { status: 500 })
+        return Response.json({ message: 'Error: ' + error.message }, { status: 500 })
     }
 }
