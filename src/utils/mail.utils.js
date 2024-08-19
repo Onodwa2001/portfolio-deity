@@ -1,6 +1,8 @@
 import nodemailer from 'nodemailer'
 import Mail from 'nodemailer/lib/mailer'
 
+console.log(process.env.MAIL_PASSWORD);
+
 const transport = nodemailer.createTransport({
     host: process.env.MAIL_HOST,
     port: process.env.MAIL_PORT,
