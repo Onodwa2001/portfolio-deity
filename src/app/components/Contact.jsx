@@ -1,14 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
+    const [result, setResult] = useState();
+    const [loading, setLoading] = useState();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        fetch('/api/emails', {
+            method: 'POST'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setResult(data)
+            })
+            .catch(error => {
+                console.log(error)
+                setResult(error)
+            })
+            .finally(() => setLoading(false));
+    }
+
     return (
         <section id="contact" className="py-20 bg-darkGray text-white flex justify-center items-center min-h-screen">
             <div className="relative bg-gray-800 backdrop-blur-lg p-10 rounded-xl shadow-neon border border-neon max-w-lg w-full">
                 <h2 className="text-4xl font-extrabold text-center mb-12">
                     Speak thy will
                 </h2>
+
+                {loading && <div className="my-4">Processing...</div>}
+                {/* {result && <div className="my-4">{result}</div>} */}
                 
                 {/* Social Media Icons */}
                 <div className="justify-center flex space-x-8 mb-10">
@@ -40,7 +66,7 @@ export default function Contact() {
                         rows="6"
                     />
                     <button
-                        type="submit"
+                        onClick={sendEmail}
                         className="p-4 bg-neon text-darkGray font-bold rounded-lg transition-transform transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-neon focus:ring-opacity-50"
                     >
                         Send

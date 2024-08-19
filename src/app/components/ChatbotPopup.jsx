@@ -93,7 +93,7 @@ export default function ChatbotPopup() {
 
                         {selected.map((chosenQuestion, index) => (
                             <div key={index}>
-                                <div className="bg-gray-600 p-2 rounded-lg text-right ml-14">
+                                <div className="bg-gray-600 p-2 rounded-lg ml-14">
                                     <p>{chosenQuestion.question}</p>
                                 </div>
                                 <div className="bg-gray-700 p-2 rounded-lg mr-14 mt-[18px]">
