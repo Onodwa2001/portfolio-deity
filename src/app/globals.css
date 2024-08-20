@@ -19,6 +19,14 @@
   }
 }
 
+@media (max-width: 602px) {
+  #hero-options {
+    background-color: red;
+    display: grid;
+    grid-template-columns: 100%;
+  }
+}
+
 body {
   @apply bg-darkGray text-white font-futuristic;
   scroll-behavior: smooth;
