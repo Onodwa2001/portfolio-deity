@@ -18,7 +18,7 @@ export default function ChatbotPopup() {
         {
             id: 2,
             question: 'What are your strengths?',
-            answer: 'I enjoy do things that others do not want to do 💪'
+            answer: 'I enjoy doing things that others do not want to do 💪'
         },
         {
             id: 3,
@@ -28,14 +28,14 @@ export default function ChatbotPopup() {
         {
             id: 4,
             question: 'What are your skills?',
-            answer: 'I know both frontend 🌍, backend 🛜, databases 🏬 and REST APIs ✈️. I am profficient in JavaScript, TypeScript, and Java. I am familiar with C# and PHP. \nMy tech stack for small projects is React, NodeJS and Express, MongoDB.\nMy choice for bigger projects is NextJS or Angular and Spring Boot or ASP.NET'
+            answer: 'I know both frontend 🌍, backend 🛜, databases 🏬 and REST APIs ✈️. I am proficient in JavaScript, TypeScript, and Java. I am familiar with C# and PHP. \nMy tech stack for small projects is React, NodeJS and Express, MongoDB.\nMy choice for bigger projects is NextJS or Angular and Spring Boot or ASP.NET'
         },
         {
             id: 5,
             question: 'I would like to hire you',
             answer: 'If you scroll to the bottom of the page ⬇️⬇️⬇️, you will find all my social media. You can also leave a message ✉️ on the contact form and I will get in touch with you as soon as possible ✨.'
         }
-    ]
+    ];
 
     const messagesEndRef = useRef(null);
 
@@ -46,10 +46,6 @@ export default function ChatbotPopup() {
     const handleQuestionChoice = (id) => {
         const question = options.find(op => op.id === id);
         setSelected(prevQuestions => [...prevQuestions, question]);
-    }
-
-    const renderResponse = () => {
-
     }
 
     useEffect(() => {
@@ -70,7 +66,7 @@ export default function ChatbotPopup() {
 
             {/* Chatbot Popup */}
             <div
-                className={`fixed bottom-4 right-4 w-[400px] max-w-full bg-gray-800 ${isOpen ? '' : 'hidden'} text-white rounded-lg shadow-lg transition-transform transform translate-y-0 opacity-100 animate-float`}
+                className={`fixed bottom-4 right-4 w-full max-w-lg bg-gray-800 ${isOpen ? '' : 'hidden'} text-white rounded-lg shadow-lg transition-transform transform translate-y-0 opacity-100 animate-float`}
             >
                 <div className="flex items-center justify-between p-4 border-b border-gray-700">
                     <h2 className="text-xl font-semibold">Onodwa Siyotula</h2>
@@ -85,7 +81,7 @@ export default function ChatbotPopup() {
                     {/* Chat messages go here */}
                     <div className="space-y-4">
                         <div className="bg-gray-700 p-2 rounded-lg mr-14">
-                            <p>Thou hast summoned the divine presence. </p>
+                            <p>Thou hast summoned the divine presence.</p>
                         </div>
                         <div className="bg-gray-700 p-2 rounded-lg mr-14">
                             <p>Speak thy will, and I shall bestow upon thee my wisdom and favor.</p>
@@ -106,9 +102,20 @@ export default function ChatbotPopup() {
                 </div>
                 <div className="p-4 border-t border-gray-700" style={{ position: 'relative' }}>
                     {options.map(option => (
-                        <button key={option.id} className='border p-2 m-2 text-xs' style={{ borderRadius: 8 }} onClick={() => handleQuestionChoice(option.id)}>{option.question}</button>
+                        <button
+                            key={option.id}
+                            className="border p-2 m-2 text-xs bg-gray-800 border-neon rounded-lg text-neon hover:bg-gray-700 hover:border-white transition-transform transform hover:scale-105"
+                            onClick={() => handleQuestionChoice(option.id)}
+                        >
+                            {option.question}
+                        </button>
                     ))}
-                    <button style={{ position: 'absolute', right: 20, bottom: 20 }} className='text-xs text-neon'>Show other questions</button>
+                    <button
+                        style={{ position: 'absolute', right: 20, bottom: 20 }}
+                        className="text-xs text-neon hover:text-white transition-transform transform hover:scale-110"
+                    >
+                        Show other questions
+                    </button>
                 </div>
             </div>
 
