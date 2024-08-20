@@ -39,16 +39,16 @@ export default function Contact() {
 
     return (
         <section id="contact" className="py-20 bg-darkGray text-white flex justify-center items-center min-h-screen">
-            <div className="relative bg-gray-800 backdrop-blur-lg p-10 rounded-xl shadow-neon border border-neon max-w-lg w-full">
-                <h2 className="text-4xl font-extrabold text-center mb-12">
+            <div className="relative bg-gray-800 backdrop-blur-lg p-6 sm:p-10 rounded-xl shadow-neon border border-neon max-w-md sm:max-w-lg w-full mx-4 sm:mx-0">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-8 sm:mb-12">
                     Speak thy will
                 </h2>
 
-                {/* {loading && <div className="my-4">Processing...</div>} */}
+                {/* Display result if present */}
                 {result && <div className="my-4 text-center">{result.message}</div>}
-                
+
                 {/* Social Media Icons */}
-                <div className="justify-center flex space-x-8 mb-10">
+                <div className="flex justify-center space-x-6 sm:space-x-8 mb-8 sm:mb-10">
                     <a href="https://www.instagram.com/viggo.exe/" target="_blank" rel="noopener noreferrer" className="text-neon hover:text-white transition-transform transform hover:scale-125">
                         <FaInstagram size={30} />
                     </a>
@@ -59,38 +59,37 @@ export default function Contact() {
                         <FaLinkedin size={30} />
                     </a>
                 </div>
-                
-                <form className="flex flex-col space-y-6">
+
+                <form className="flex flex-col space-y-4 sm:space-y-6">
                     <input
                         type="text"
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
+                        className="p-3 sm:p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
                     />
                     <input
                         type="email"
                         placeholder="Email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
+                        className="p-3 sm:p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
                     />
                     <textarea
                         placeholder="Message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        className="p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
-                        rows="6"
+                        className="p-3 sm:p-4 rounded-lg bg-transparent border border-neon text-white focus:outline-none focus:ring-2 focus:ring-neon transition-all transform hover:scale-105"
+                        rows="5"
                     />
                     <button
                         onClick={sendEmail}
-                        className="p-4 bg-neon text-darkGray font-bold rounded-lg transition-transform transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-neon focus:ring-opacity-50"
+                        className="p-3 sm:p-4 bg-neon text-darkGray font-bold rounded-lg transition-transform transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-neon focus:ring-opacity-50"
                     >
                         {loading ? 'Processing...' : 'Send'}
                     </button>
                 </form>
                 <div className="absolute inset-0 pointer-events-none border border-neon rounded-xl opacity-30 animate-pulse"></div>
-
             </div>
 
             {/* Floating animation CSS */}
